@@ -16,6 +16,10 @@ set(SRCS
 find_package(OpenCV REQUIRED)
 find_package(DLib REQUIRED)
 
+
+message (STATUS "USING OPENCV: ${OpenCV_INCLUDE_DIRS}")
+message (STATUS "USING DLib: ${DLib_INCLUDE_DIRS}")
+
 if(BUILD_DBoW2)
   include_directories(include/DBoW2/ ${OpenCV_INCLUDE_DIRS} ${DLib_INCLUDE_DIRS})
   add_library(${PROJECT_NAME} SHARED ${SRCS})
